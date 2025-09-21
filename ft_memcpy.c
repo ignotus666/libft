@@ -6,7 +6,7 @@
 /*   By: dhanlon <dhanlon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 11:48:25 by dhanlon           #+#    #+#             */
-/*   Updated: 2025/09/15 11:48:26 by dhanlon          ###   ########.fr       */
+/*   Updated: 2025/09/16 17:09:27 by dhanlon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*mem_src;
 	size_t			i;
 
-	if (!dest && !src)
-		return (NULL);
 	i = 0;
 	mem_dest = (unsigned char *)dest;
 	mem_src = (unsigned char *)src;

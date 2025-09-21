@@ -6,37 +6,32 @@
 /*   By: dhanlon <dhanlon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 11:49:07 by dhanlon           #+#    #+#             */
-/*   Updated: 2025/09/15 11:49:07 by dhanlon          ###   ########.fr       */
+/*   Updated: 2025/09/17 16:33:32 by dhanlon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	i;
 	size_t	dst_len;
+	size_t	src_len;
+	size_t	i;
 
-	dst_len = ft_strlen(dst);
+	dst_len = 0;
+	while (dst[dst_len] != '\0' && dst_len < size)
+		dst_len++;
+	src_len = 0;
+	while (src[src_len] != '\0')
+		src_len++;
+	if (dst_len >= size)
+		return (size + src_len);
 	i = 0;
-	if (size <= dst_len)
-		return (size + ft_strlen(src));
-	else if (size > 0)
+	while (src[i] != '\0' && (dst_len + i + 1) < size)
 	{
-		while (src[i] && i < (size - 1 - dst_len) && dst_len < size)
-		{
-			dst[i + dst_len] = src[i];
-			i++;
-		}
-		dst[dst_len + i] = '\0';
+		dst[i + dst_len] = src[i];
+		i++;
 	}
-	return (dst_len + ft_strlen(src));
+	if (dst_len + 1 < size)
+		dst[i + dst_len] = '\0';
+	return (dst_len + src_len);
 }
+

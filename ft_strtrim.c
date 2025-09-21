@@ -6,7 +6,7 @@
 /*   By: dhanlon <dhanlon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 11:49:51 by dhanlon           #+#    #+#             */
-/*   Updated: 2025/09/15 11:49:52 by dhanlon          ###   ########.fr       */
+/*   Updated: 2025/09/20 08:33:08 by dhanlon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trimmed[i] = '\0';
 	return (trimmed);
 }
-//Use memcpy.
+
