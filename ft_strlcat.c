@@ -6,9 +6,11 @@
 /*   By: dhanlon <dhanlon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 11:49:07 by dhanlon           #+#    #+#             */
-/*   Updated: 2025/09/17 16:33:32 by dhanlon          ###   ########.fr       */
+/*   Updated: 2025/09/22 10:43:00 by dhanlon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -34,4 +36,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		dst[i + dst_len] = '\0';
 	return (dst_len + src_len);
 }
-

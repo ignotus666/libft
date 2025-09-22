@@ -6,21 +6,13 @@
 /*   By: dhanlon <dhanlon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 11:49:51 by dhanlon           #+#    #+#             */
-/*   Updated: 2025/09/20 08:33:08 by dhanlon          ###   ########.fr       */
+/*   Updated: 2025/09/22 13:00:38 by dhanlon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
+#include "libft.h"
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-char	*empty_trimmed(void)
+static char	*empty_trimmed(void)
 {
 	char	*trimmed;
 
@@ -31,7 +23,7 @@ char	*empty_trimmed(void)
 	return (trimmed);
 }
 
-int	is_in_set(char c, char const *set)
+static int	is_in_set(char c, char const *set)
 {
 	while (*set)
 	{
@@ -50,10 +42,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 
 	l_index = 0;
-	while (is_in_set(s1[l_index], set) == 1)
+	while (is_in_set(s1[l_index], set))
 		l_index++;
-	t_index = ft_strlen(s1) - 1;
-	while (t_index >= l_index && is_in_set(s1[t_index], set) == 1)
+	t_index = ft_strlen(s1);
+	if (t_index == 0)
+		return (empty_trimmed());
+	t_index--;
+	while (t_index >= l_index && is_in_set(s1[t_index], set))
 		t_index--;
 	if (l_index > t_index)
 		return (empty_trimmed());
@@ -66,4 +61,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trimmed[i] = '\0';
 	return (trimmed);
 }
-

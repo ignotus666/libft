@@ -6,9 +6,11 @@
 /*   By: dhanlon <dhanlon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 11:45:53 by dhanlon           #+#    #+#             */
-/*   Updated: 2025/09/16 16:20:41 by dhanlon          ###   ########.fr       */
+/*   Updated: 2025/09/22 10:43:11 by dhanlon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

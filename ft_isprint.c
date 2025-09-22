@@ -6,9 +6,11 @@
 /*   By: dhanlon <dhanlon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 11:45:39 by dhanlon           #+#    #+#             */
-/*   Updated: 2025/09/15 11:45:40 by dhanlon          ###   ########.fr       */
+/*   Updated: 2025/09/22 10:41:33 by dhanlon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

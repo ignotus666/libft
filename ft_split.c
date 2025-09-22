@@ -6,9 +6,11 @@
 /*   By: dhanlon <dhanlon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 11:50:37 by dhanlon           #+#    #+#             */
-/*   Updated: 2025/09/21 08:33:19 by dhanlon          ###   ########.fr       */
+/*   Updated: 2025/09/22 13:12:51 by dhanlon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static unsigned int	count_words(char const *s, char c)
 {
@@ -36,7 +38,7 @@ static char	*create_word(char const *s, size_t word_len, size_t s_index)
 	size_t	i;
 	char	*word;
 
-	word = (char *) malloc(sizeof (char) * word_len + 1);
+	word = (char *) malloc(sizeof (char) * (word_len + 1));
 	if (!word)
 		return (NULL);
 	i = 0;
@@ -47,19 +49,6 @@ static char	*create_word(char const *s, size_t word_len, size_t s_index)
 	}
 	word[word_len] = '\0';
 	return (word);
-}
-
-static void	free_split(char **words)
-{
-	size_t	i;
-
-	i = 0;
-	while (words[i] != NULL)
-	{
-		free (words[i]);
-		i++;
-	}
-	free (words);
 }
 
 static void	fill_words(const char *s, char c, char **words)
@@ -97,10 +86,9 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	words = (char **) malloc(sizeof (char *) * count_words(s, c) + 1);
+	words = (char **) malloc(sizeof (char *) * (count_words(s, c) + 1));
 	if (!words)
 		return (NULL);
 	fill_words(s, c, words);
 	return (words);
 }
-

@@ -6,36 +6,11 @@
 /*   By: dhanlon <dhanlon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 11:50:01 by dhanlon           #+#    #+#             */
-/*   Updated: 2025/09/20 08:11:58 by dhanlon          ###   ########.fr       */
+/*   Updated: 2025/09/22 10:45:05 by dhanlon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-void	*ft_memcpy(void *dest, const void *src, size_t n)
-{
-	unsigned char	*mem_dest;
-	unsigned char	*mem_src;
-	size_t			i;
-
-	i = 0;
-	mem_dest = (unsigned char *)dest;
-	mem_src = (unsigned char *)src;
-	while (i < n)
-	{
-		mem_dest[i] = mem_src[i];
-		i++;
-	}
-	return (dest);
-}
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -61,4 +36,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	dest[len] = '\0';
 	return (dest);
 }
-

@@ -6,9 +6,11 @@
 /*   By: dhanlon <dhanlon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 11:47:49 by dhanlon           #+#    #+#             */
-/*   Updated: 2025/09/15 11:47:50 by dhanlon          ###   ########.fr       */
+/*   Updated: 2025/09/22 10:40:50 by dhanlon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

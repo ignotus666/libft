@@ -6,9 +6,11 @@
 /*   By: dhanlon <dhanlon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 11:48:10 by dhanlon           #+#    #+#             */
-/*   Updated: 2025/09/15 11:48:11 by dhanlon          ###   ########.fr       */
+/*   Updated: 2025/09/22 13:01:37 by dhanlon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
