@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhanlon <dhanlon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/15 11:42:50 by dhanlon           #+#    #+#             */
-/*   Updated: 2025/09/24 22:19:22 by dhanlon          ###   ########.fr       */
+/*   Created: 2025/09/23 18:03:29 by dhanlon           #+#    #+#             */
+/*   Updated: 2025/09/24 22:18:51 by dhanlon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	num;
-	int	sign;
+	t_list	*current;
 
-	num = 0;
-	sign = 1;
-	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
-		nptr++;
-	if (*nptr == '+' || *nptr == '-')
+	if (!lst || !new)
+		return (NULL);
+	
+	while ((*lst)->next)
 	{
-		if (*nptr == '-')
-			sign *= -1;
-		nptr++;
+		lst = (*lst)->next;
 	}
-	while (*nptr >= '0' && *nptr <= '9')
-	{
-		num = (num * 10) + (*nptr - '0');
-		nptr++;
-	}
-	return (sign * num);
+	new->next = lst;
+
 }

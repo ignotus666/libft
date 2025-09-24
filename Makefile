@@ -6,7 +6,7 @@
 #    By: dhanlon <dhanlon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/22 10:53:56 by dhanlon           #+#    #+#              #
-#    Updated: 2025/09/22 10:55:59 by dhanlon          ###   ########.fr        #
+#    Updated: 2025/09/24 08:33:42 by dhanlon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,8 +32,8 @@ RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 INCLUDE = -I .
 
-.o:.c
-		${CC} ${CFLAGS} ${INCLUDE} -c $< -o ${<:.c=.o}
+%.o:%.c
+		${CC} ${CFLAGS} ${INCLUDE} -c $< -o $@
 
 $(NAME): ${OBJS}
 		ar rcs ${NAME} ${OBJS}

@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhanlon <dhanlon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/15 11:42:50 by dhanlon           #+#    #+#             */
-/*   Updated: 2025/09/24 22:19:22 by dhanlon          ###   ########.fr       */
+/*   Created: 2025/09/22 15:50:31 by dhanlon           #+#    #+#             */
+/*   Updated: 2025/09/24 16:02:25 by dhanlon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	int	num;
-	int	sign;
-
-	num = 0;
-	sign = 1;
-	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
-		nptr++;
-	if (*nptr == '+' || *nptr == '-')
+	if (lst && new)
 	{
-		if (*nptr == '-')
-			sign *= -1;
-		nptr++;
+		new->next = *lst;
+		*lst = new;
 	}
-	while (*nptr >= '0' && *nptr <= '9')
-	{
-		num = (num * 10) + (*nptr - '0');
-		nptr++;
-	}
-	return (sign * num);
 }
