@@ -6,7 +6,7 @@
 #    By: dhanlon <dhanlon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/22 10:53:56 by dhanlon           #+#    #+#              #
-#    Updated: 2025/09/24 08:33:42 by dhanlon          ###   ########.fr        #
+#    Updated: 2025/09/26 18:24:06 by dhanlon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,13 @@ PART2 = ft_itoa.c ft_strjoin.c ft_split.c ft_striteri.c ft_strmapi.c \
 		ft_substr.c ft_strtrim.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 		ft_putnbr_fd.c
 
+BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
+		ft_lstiter.c ft_lstmap.c ft_lstsize.c ft_lstlast.c
+
 SRC = ${PART1} ${PART2}
 
-OBJS = ${SRC:.c=.o}
+OBJ = ${SRC:.c=.o}
+BONUS_OBJ = ${BONUS:.c=.o}
 
 CC = gcc
 RM = rm -f
@@ -35,13 +39,16 @@ INCLUDE = -I .
 %.o:%.c
 		${CC} ${CFLAGS} ${INCLUDE} -c $< -o $@
 
-$(NAME): ${OBJS}
-		ar rcs ${NAME} ${OBJS}
+$(NAME): ${OBJ}
+		ar rcs ${NAME} ${OBJ}
 
 all:	${NAME}
 
+bonus:	${OBJ} ${BONUS_OBJ}
+		ar rcs ${NAME} ${OBJ} ${BONUS_OBJ}
+
 clean:
-		${RM} ${OBJS}
+		${RM} ${OBJ} ${BONUS_OBJ}
 
 fclean: clean
 		${RM} ${NAME}
