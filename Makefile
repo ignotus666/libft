@@ -26,10 +26,11 @@ PART2 = ft_itoa.c ft_strjoin.c ft_split.c ft_striteri.c ft_strmapi.c \
 BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
 		ft_lstiter.c ft_lstmap.c ft_lstsize.c ft_lstlast.c
 
-SRC = ${PART1} ${PART2}
+GNL = get_next_line.c
+
+SRC = ${PART1} ${PART2} ${BONUS} ${GNL}
 
 OBJ = ${SRC:.c=.o}
-BONUS_OBJ = ${BONUS:.c=.o}
 
 CC = gcc
 RM = rm -f
@@ -44,11 +45,8 @@ $(NAME): ${OBJ}
 
 all:	${NAME}
 
-bonus:	${OBJ} ${BONUS_OBJ}
-		ar rcs ${NAME} ${OBJ} ${BONUS_OBJ}
-
 clean:
-		${RM} ${OBJ} ${BONUS_OBJ}
+		${RM} ${OBJ}
 
 fclean: clean
 		${RM} ${NAME}
