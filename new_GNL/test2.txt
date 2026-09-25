@@ -1,0 +1,4 @@
+This is the first line in test file 2.
+This is line 2 in test file 2.
+This is line 3 in test file 2.
+Last line in test file 2 with no newline.
